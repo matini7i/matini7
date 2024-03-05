@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ویدیوها</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid background">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">ویدیوها</h1>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card lesson-card" onclick="showVideos('lesson1Videos')">
+                  <div class="card-body">
+                    <h5 class="card-title">درس 1</h5>
+                    <p class="card-text">یادگیری مقدماتی</p>
+                  </div>
+                </div>
+                <div id="lesson1Videos" class="videos-container">
+                  <!-- ویدیوها در اینجا قرار می‌گیرند -->
+                  <a href="video1.html" class="btn btn-primary">ویدیو 1</a>
+                  <a href="video2.html" class="btn btn-primary">ویدیو 2</a>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card lesson-card" onclick="showVideos('lesson2Videos')">
+                  <div class="card-body">
+                    <h5 class="card-title">درس 2</h5>
+                    <p class="card-text">یادگیری پیشرفته</p>
+                  </div>
+                </div>
+                <div id="lesson2Videos" class="videos-container">
+                  <!-- ویدیوها در اینجا قرار می‌گیرند -->
+                  <a href="video3.html" class="btn btn-primary">ویدیو 3</a>
+                  <a href="video4.html" class="btn btn-primary">ویدیو 4</a>
+                </div>
+              </div>
+              <!-- می‌توانید بیشتر بخش‌های درسی را اضافه کنید -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+    /* .background {
+  background-color: #f0f8ff; 
+  height: 100vh;
+}
+
+.lesson-card {
+  margin-bottom: 20px;
+  cursor: pointer; 
+}
+
+.videos-container {
+  display: none; 
+}
+
+.videos-container.active {
+  display: block; 
+} */
+.background {
+  background-color: #f0f8ff; /* رنگ بک‌گراند ابی کم رنگ */
+  height: 100vh;
+}
+
+.lesson-card {
+  margin-bottom: 20px;
+  cursor: pointer; /* تغییر نماد نشان دهنده دکمه */
+  transition: transform 0.3s ease-in-out; /* اضافه کردن انیمیشن */
+  border-radius: 20px; /* گوشه‌گیری باکس */
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* حاشیه سایه */
+  background-color: #ffc107; /* رنگ زمینه باکس (رنگ زرد) */
+}
+
+.lesson-card:hover {
+  transform: scale(1.05); /* اندازه دکمه بزرگتر شود هنگام هاور */
+}
+
+.videos-container {
+  display: none; /* مخفی کردن ویدیوها از ابتدا */
+}
+
+.videos-container.active {
+  display: flex; /* نمایش ویدیوها پس از کلیک */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.video-link {
+  margin: 5px;
+}
+
+h1.card-title {
+  text-align: center; /* وسط‌چین کردن متن */
+  font-family: 'Arial', sans-serif; /* استفاده از فونت خانواده Arial */
+}
+
+</style>
+<script>function showVideos(containerId) {
+    var videosContainer = document.getElementById(containerId);
+    videosContainer.classList.toggle('active'); // تغییر وضعیت نمایش ویدیوها
+  }
+  </script>

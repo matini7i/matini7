@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background"></div>
+<div class="login-container">
+    <div class="login-box">
+        <div class="avatar">
+                        <img src="https://s8.uupload.ir/files/img_20240227_142130_202_af3m.jpg" alt="Avatar">
+
+        </div>
+        <h2>ورود</h2>
+        <form method="POST" action="ui-pages-home.html" id="login-form">
+            <div class="textbox">
+                <input type="text" name="key" placeholder="موبایل / نام کاربری / ایمیل" id="key-input">
+                <div class="error" id="key-error"></div>
+            </div>
+            <div class="textbox">
+                <input type="password" name="password" placeholder="رمزعبور" id="password-input">
+                <div class="error" id="password-error"></div>
+            </div>
+            <button class="btn" type="submit" name="signin"> ورود</button>
+        </form>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var keyInput = document.getElementById("key-input").value;
+            var passwordInput = document.getElementById("password-input").value;
+            var keyError = document.getElementById("key-error");
+            var passwordError = document.getElementById("password-error");
+
+            // اگر اطلاعات وارد شده صحیح باشد، به صفحه home.html هدایت شود
+            if (keyInput === "نگار" && passwordInput === "12345") {
+                window.location.href = "/ui-pages-home.html";
+            } else {
+                // در غیر اینصورت، نمایش ارور و اعمال استایل‌های خطا
+                if (keyInput !== "نگار") {
+                    document.getElementById("key-input").classList.add("error");
+                    keyError.textContent = "نام کاربری اشتباه است!";
+                    keyError.style.display = "block";
+                } else {
+                    document.getElementById("key-input").classList.remove("error");
+                    keyError.style.display = "none";
+                }
+
+                if (passwordInput !== "12345") {
+                    document.getElementById("password-input").classList.add("error");
+                    passwordError.textContent = "رمزعبور اشتباه است!";
+                    passwordError.style.display = "block";
+                } else {
+                    document.getElementById("password-input").classList.remove("error");
+                    passwordError.style.display = "none";
+                }
+            }
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    // اگر کاربر قبلا وارد شده بود
+    if (isLoggedIn) {
+        window.location.href = "/index3.html"; // هدایت به صفحه Home
+    }
+
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var keyInput = document.getElementById("key-input").value;
+        var passwordInput = document.getElementById("password-input").value;
+        var keyError = document.getElementById("key-error");
+        var passwordError = document.getElementById("password-error");
+
+        if (keyInput === "نگار" && passwordInput === "12345") {
+            localStorage.setItem("isLoggedIn", true); // ذخیره ورود در localStorage
+            window.location.href = "/index3.html"; // هدایت به صفحه index3.html
+        } else {
+            keyError.textContent = "اطلاعات ورود اشتباه است!";
+            passwordError.textContent = "اطلاعات ورود اشتباه است!";
+            keyError.style.display = "block";
+            passwordError.style.display = "block";
+        }
+    });
+});
+
+</script>
+
+
+
+
+
+
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg'); /* Replace 'background.jpg' with your background image */
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+    background: url(https://artwala.ir/wp-content/uploads/2022/05/AW-17013.jpg)
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.avatar {
+    margin-bottom: 20px;
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ffb3b3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0px 1px 1px 1px #f29f9f;*/
+}
+
+.login-box {
+    width: 272px;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: 420px;
+    box-shadow: 2px 2px 5px 5px #6e6e6e;
+    margin-top: -60%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.textbox {
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    box-shadow: 2px 2px 5px #00fff3;
+    background-color: azure;
+}
+
+.btn {
+    width: 44%;
+    padding: 10px;
+    border: none;
+    border-radius: 9px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 2%;
+    font-size: math;
+    margin-top: 6%;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    display: block;
+}
+
+.textbox input.error {
+    border-color: red;
+}
+
+</style>
+</body>
+</html>
