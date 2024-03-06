@@ -1,116 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ویدیوها</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container-fluid background">
-    <div class="row justify-content-center align-items-center h-100">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-body">
-            <h1 class="card-title">ویدیوها</h1>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card lesson-card" onclick="showVideos('lesson1Videos')">
-                  <div class="card-body">
-                    <h5 class="card-title">درس 1</h5>
-                    <p class="card-text">یادگیری مقدماتی</p>
-                  </div>
-                </div>
-                <div id="lesson1Videos" class="videos-container">
-                  <!-- ویدیوها در اینجا قرار می‌گیرند -->
-                  <a href="video1.html" class="btn btn-primary">ویدیو 1</a>
-                  <a href="video2.html" class="btn btn-primary">ویدیو 2</a>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card lesson-card" onclick="showVideos('lesson2Videos')">
-                  <div class="card-body">
-                    <h5 class="card-title">درس 2</h5>
-                    <p class="card-text">یادگیری پیشرفته</p>
-                  </div>
-                </div>
-                <div id="lesson2Videos" class="videos-container">
-                  <!-- ویدیوها در اینجا قرار می‌گیرند -->
-                  <a href="video3.html" class="btn btn-primary">ویدیو 3</a>
-                  <a href="video4.html" class="btn btn-primary">ویدیو 4</a>
-                </div>
-              </div>
-              <!-- می‌توانید بیشتر بخش‌های درسی را اضافه کنید -->
-            </div>
-          </div>
+
+<div class="login-container">
+    <div class="login-box">
+        <div class="avatar">
+            <img src="images/56y.jpg" alt="Avatar">
         </div>
-      </div>
+        <h2>ورود</h2>
+        <form method="POST" action="index-homepages.html" id="login-form">
+            <div class="textbox">
+                <input type="text" name="key" placeholder="موبایل / نام کاربری / ایمیل" id="key-input">
+                <div class="error" id="key-error"></div>
+            </div>
+            <div class="textbox">
+                <input type="password" name="password" placeholder="رمزعبور" id="password-input">
+                <div class="error" id="password-error"></div>
+            </div>
+            <button class="btn" type="submit" name="signin"> ورود</button>
+        </form>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var keyInput = document.getElementById("key-input").value;
+            var passwordInput = document.getElementById("password-input").value;
+            var keyError = document.getElementById("key-error");
+            var passwordError = document.getElementById("password-error");
+
+            // اگر اطلاعات وارد شده صحیح باشد، به صفحه home.html هدایت شود
+            if (keyInput === "نگار" && passwordInput === "12345") {
+                window.location.href = "index-homepages.html";
+            } else {
+                // در غیر اینصورت، نمایش ارور و اعمال استایل‌های خطا
+                if (keyInput !== "نگار") {
+                    document.getElementById("key-input").classList.add("error");
+                    keyError.textContent = "نام کاربری اشتباه است!";
+                    keyError.style.display = "block";
+                } else {
+                    document.getElementById("key-input").classList.remove("error");
+                    keyError.style.display = "none";
+                }
+
+                if (passwordInput !== "12345") {
+                    document.getElementById("password-input").classList.add("error");
+                    passwordError.textContent = "رمزعبور اشتباه است!";
+                    passwordError.style.display = "block";
+                } else {
+                    document.getElementById("password-input").classList.remove("error");
+                    passwordError.style.display = "none";
+                }
+            }
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    // اگر کاربر قبلا وارد شده بود
+    if (isLoggedIn) {
+        window.location.href = "index-homepages.html"; // هدایت به صفحه Home
+    }
+
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var keyInput = document.getElementById("key-input").value;
+        var passwordInput = document.getElementById("password-input").value;
+        var keyError = document.getElementById("key-error");
+        var passwordError = document.getElementById("password-error");
+
+        if (keyInput === "نگار" && passwordInput === "12345") {
+            localStorage.setItem("isLoggedIn", true); // ذخیره ورود در localStorage
+            window.location.href = "index-homepages.html"; // هدایت به صفحه index3.html
+        } else {
+            keyError.textContent = "اطلاعات ورود اشتباه است!";
+            passwordError.textContent = "اطلاعات ورود اشتباه است!";
+            keyError.style.display = "block";
+            passwordError.style.display = "block";
+        }
+    });
+});
+
+</script>
+
+
 <style>
-    /* .background {
-  background-color: #f0f8ff; 
-  height: 100vh;
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-.lesson-card {
-  margin-bottom: 20px;
-  cursor: pointer; 
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.videos-container {
-  display: none; 
+.avatar {
+    margin-bottom: 20px;
 }
 
-.videos-container.active {
-  display: block; 
-} */
-.background {
-  background-color: #f0f8ff; /* رنگ بک‌گراند ابی کم رنگ */
-  height: 100vh;
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ffb3b3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0px 1px 1px 1px #f29f9f;*/
 }
 
-.lesson-card {
-  margin-bottom: 20px;
-  cursor: pointer; /* تغییر نماد نشان دهنده دکمه */
-  transition: transform 0.3s ease-in-out; /* اضافه کردن انیمیشن */
-  border-radius: 20px; /* گوشه‌گیری باکس */
-  overflow: hidden;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* حاشیه سایه */
-  background-color: #ffc107; /* رنگ زمینه باکس (رنگ زرد) */
+.login-box {
+    width: 272px;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: 420px;
+    box-shadow: 2px 2px 5px 5px #6e6e6e;
+    margin-top: -60%;
 }
 
-.lesson-card:hover {
-  transform: scale(1.05); /* اندازه دکمه بزرگتر شود هنگام هاور */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.videos-container {
-  display: none; /* مخفی کردن ویدیوها از ابتدا */
+.textbox {
+    margin-bottom: 20px;
 }
 
-.videos-container.active {
-  display: flex; /* نمایش ویدیوها پس از کلیک */
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    box-shadow: 2px 2px 5px #00fff3;
+    background-color: azure;
 }
 
-.video-link {
-  margin: 5px;
+.btn {
+    width: 44%;
+    padding: 10px;
+    border: none;
+    border-radius: 9px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 2%;
+    font-size: math;
+    margin-top: 6%;
 }
 
-h1.card-title {
-  text-align: center; /* وسط‌چین کردن متن */
-  font-family: 'Arial', sans-serif; /* استفاده از فونت خانواده Arial */
+.error {
+    color: red;
+    font-size: 14px;
+    display: block;
+}
+
+.textbox input.error {
+    border-color: red;
 }
 
 </style>
-<script>function showVideos(containerId) {
-    var videosContainer = document.getElementById(containerId);
-    videosContainer.classList.toggle('active'); // تغییر وضعیت نمایش ویدیوها
-  }
-  </script>
+</body>
+</html>

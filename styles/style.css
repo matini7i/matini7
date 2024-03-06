@@ -4496,6 +4496,8 @@ code {
 .btn, input, select {
   box-shadow: none !important;
   outline: 0px !important;
+  background: linear-gradient(85deg, #a00ace 0%, #FBA834 100%);
+
 }
 
 input:hover,
@@ -6850,7 +6852,7 @@ input[type=number] {
 }
 
 .bg-1 {
-  background-image: url(../images/pictures/1.jpg);
+  background-image: url(https://fs.noorgram.ir/xen/2020/12/998_9aed7c82519fdcbc8a7fcbd2f01a46bf.png);
 }
 
 .bg-2 {
@@ -6910,7 +6912,7 @@ input[type=number] {
 }
 
 .bg-16 {
-  background-image: url(../images/pictures/16.jpg);
+  background-image: url(https://beroozresani.com/blog/media/k2/items/cache/4e61ab6d671b20a2cf3574d7409e8e5d_XL.jpg);
 }
 
 .bg-17 {
