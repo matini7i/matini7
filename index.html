@@ -1,276 +1,238 @@
-
-
 <!DOCTYPE html>
-<html class=" ">
-
+<html lang="en">
 <head>
-  <!-- 
-         * @Package: Alix Mobile App 
-         * @Author: themepassion
-         * @Version: 1.0
-        -->
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>Alix Mobile App: </title>
-  <meta content="Alix Mobile App" name="description" />
-  <meta content="themepassion" name="author" />
-
-
-  <!-- App Icons -->
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/icons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="assets/images/icons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/icons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/icons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/images/icons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/icons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
-  <link rel="manifest" href="assets/images/icons/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="assets/images/icons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-
-
-
-
-  <!-- CORE CSS FRAMEWORK - START -->
-  <link href="assets/css/preloader.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
-  <link href="modules/materialize/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="modules/fonts/mdi/materialdesignicons.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="modules/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
-
-  <!-- CORE CSS FRAMEWORK - END -->
-
-  <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
-    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
-  <!-- CORE CSS TEMPLATE - START -->
-
-  
-    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" id="main-style" />
-  <!-- CORE CSS TEMPLATE - END -->
-
-  
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+<body>
+
+
+  <div class="card">
+  
+    <div class="btn1"></div>
+    <div class="btn2"></div>
+    <div class="btn3"></div>
+    <div class="btn4"></div>
 
 
 
+    
 
+    <div class="card-int">
+      <div class="hello">
+        <button type="submit" id="loginButton">وارد شوید</button>
 
-<!-- END HEAD -->
-
-<!-- BEGIN BODY -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $("#loadContent").click(function(){
-            $.ajax({
-                url: "مسیر/به/سرور",
-                type: "GET", // یا POST
-                dataType: "html", // نوع داده مورد انتظار (می‌تواند json، html و غیره باشد)
-                success: function(response){
-                    $("#content").html(response); // به‌روزرسانی محتوای صفحه بدون رفرش
-                },
-                error: function(xhr, status, error){
-                    console.error("خطا در بارگذاری محتوا: " + error);
-                }
-            });
-        });
-    });
-</script>
-
-
-
-</style>
-
-<body class="  isfullscreen  html"  data-header="light" data-footer="dark"  data-header_align="center"  data-menu_type="left" data-menu="light" data-menu_icons="on" data-footer_type="left" data-site_mode="light" data-footer_menu="show" data-footer_menu_style="light" >
-  <div class="preloader-background">
-    <div class="preloader-wrapper">
-      <div id="preloader"></div>
+        <span class="hidden">uiverse</span>
+      </div>
+    </div>
+    <div class="top">
+      <div class="camera">
+        <div class="int"></div>
+      </div>
+      <div class="speaker"></div>
     </div>
   </div>
+<script>
+// انتخاب دکمه ورود
+const loginButton = document.getElementById('loginButton');
+
+// اضافه کردن رویداد کلیک به دکمه ورود
+loginButton.addEventListener('click', function() {
+  // رفتن به صفحه home
+  window.location.href = 'into.html';
+});
+
+</script>  
+
 
   <style>
-    /* استایل برای تصویر */
-    #header-image {
-        width: 100%;
-        height: auto;
-        border-radius: 50%; /* تبدیل تصویر به گرد */
-        max-width: 150px; /* سایز حداکثری عرض تصویر */
-            max-height: 150px; /* سایز حداکثری ارتفاع تصویر */
-        display: block; /* تصویر را به حالت بلوک درآوردن تا در صفحه اصلی باشد */
-        margin: 0 auto; /* مرکز چین کردن تصویر */
-        margin-top: -71%;
-    }
+
+.card {
+  width: 210px;
+  height: 400px;
+  background: black;
+  border-radius: 35px;
+  border: 2px solid rgb(40, 40, 40);
+  padding: 7px;
+  position: relative;
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.486);
+  margin-left: 16%;
+}
+
+.card-int {
+  background-image: linear-gradient(to right bottom, #ff0000, #ff0045, #ff0078, #ea00aa, #b81cd7, #8a3ad6, #5746cf, #004ac2, #003d94, #002e66, #001d3a, #020812);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  height: 100%;
+  border-radius: 25px;
+  transition: all 0.6s ease-out;
+  overflow: hidden;
+}
+
+.card:hover .card-int {
+  background-position: 100% 100%;
+}
+
+.top {
+  position: absolute;
+  top: 0px;
+  right: 50%;
+  transform: translate(50%, 0%);
+  width: 35%;
+  height: 18px;
+  background-color: black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.speaker {
+  position: absolute;
+  top: 2px;
+  right: 50%;
+  transform: translate(50%, 0%);
+  width: 40%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: rgb(20, 20, 20);
+}
+
+.camera {
+  position: absolute;
+  top: 6px;
+  right: 84%;
+  transform: translate(50%, 0%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.048);
+}
+
+.int {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: rgba(0, 0, 255, 0.212);
+}
+
+.btn1, .btn2, .btn3, .btn4 {
+  position: absolute;
+  width: 2px;
+}
+
+.btn1, .btn2, .btn3 {
+  height: 45px;
+  top: 30%;
+  right: -4px;
+  background-image: linear-gradient(to right, #111111, #222222, #333333, #464646, #595959);
+}
+
+.btn2, .btn3 {
+  transform: scale(-1);
+  left: -4px;
+}
+
+.btn2, .btn3 {
+  transform: scale(-1);
+  height: 30px;
+}
+
+.btn2 {
+  top: 26%
+}
+
+.btn3 {
+  top: 36%
+}
+
+.hello {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 35px;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+}
+
+.hidden {
+  display: block;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+.card:hover .hidden {
+  opacity: 1;
+}
+
+.card:hover .hello {
+  transform: translateY(-20px);
+}
+
+
+
+  </style>
+
+<style>
+  button {
+ --glow-color: rgb(217, 176, 255);
+ --glow-spread-color: rgba(191, 123, 255, 0.781);
+ --enhanced-glow-color: rgb(231, 206, 255);
+ --btn-color: rgb(100, 61, 136);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
 </style>
 
 
-
-
-  
-
-
-
- <div class="fullfixed index-carousel"> 
-     <div class="carousel carousel-fullscreen carousel-slider">
-
-        <div class="carousel-item" href="#carousel-slide-0!">
-      <div class="bg" style="background-image: url('https://www.udbhid.com/wp-content/uploads/2018/04/business-image.jpg')"></div>
-      <div class="item-content center-align white-text">
-        <div class="spacer-xlarge"></div>
-        <div class="spacer-xlarge"></div>
-        <h3 class="tex1">ورود به دنیای آموزش </h3>
-        <h5 class="light white-text">با استاد نگار </h5> 
-        <img id="header-image" src="https://cdn.downloadefilm.ir/images/59da83f0-926b-11ee-a319-c3c8f0e58455.jpg" alt="توضیحات تصویر"> -->
-
-      </div>
-    </div>
-        <div class="carousel-item" href="#carousel-slide-1!">
-      <div class="bg" style="background-image: url('https://gopik.ir/wp-content/uploads/2021/10/admin-instagram-01.jpg')"></div>
-      <div class="item-content left-align white-text">
-        <div class="spacer-xlarge"></div>
-        <div class="spacer-xlarge"></div>
-        <h3 class="tex2"></h3>
-        <h5 class="light white-text"></h5>
-        <img id="header-image" src="https://notaban.com/wp-content/uploads/2022/01/text-1.png" alt="توضیحات تصویر">
-
-      </div> 
-    </div>
-        <div class="carousel-item" href="#carousel-slide-2!">
-      <div class="bg" style="background-image: url('https://iranich.com/wp-content/uploads/2017/01/instgrm.jpg')"></div>
-      <div class="item-content center-align white-text">
-        <div class="spacer-xlarge"></div>
-        <div class="spacer-xlarge"></div>
-        <h3 class="tex3"></h3>
-        <h5 class="light white-text"></h5>
-        <img id="header-image" src="https://static3.jamaran.news/thumbnail/ZSMFw8VvZqH2/kftOZWraiFm9PM1Rxi22rcAakDOsrBGdobLolpyHk2jmWcgdmlXHqbtrCqhu6f3J9_G4aHSPIPjV9yE8zecLkhr_F5fkT4KT/%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85.jpg" alt="توضیحات تصویر">
-
-      </div>
-    </div>
-        <div class="carousel-item" href="#carousel-slide-3!">
-      <div class="bg" style="background-image: url('assets/images/full-4.jpg')"></div>
-      <div class="item-content right-align white-text">
-        <div class="spacer-xlarge"></div>
-        <div class="spacer-xlarge"></div>
-        <h3></h3>
-    
-      </div>
-    </div>
-      </div></div>
-
-<div  class="center index-start">
-  <a style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;"  href="into.html" class='waves-light btn-large bg-primary'>  ورود به برنامه
-  </a></div>
-
-
- 
-
-
-
-
-
-
-
-<!-- PWA Service Worker Code -->
-
-<script type="text/javascript">
-// This is the "Offline copy of pages" service worker
-
-// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-
-// Check compatibility for the browser we're running this in
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("pwabuilder-sw.js", {
-        scope: "./"
-      })
-      .then(function(reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      });
-  }
-}
-</script>
-<!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-<!-- CORE JS FRAMEWORK - START -->
-<script src="modules/jquery/jquery-2.2.4.min.js"></script>
-<script src="modules/materialize/materialize.js"></script>
-<script src="modules/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="assets/js/variables.js"></script>
-<!-- CORE JS FRAMEWORK - END -->
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $("#loadContent").click(function(){
-            $.ajax({
-                url: "your-server-url",
-                type: "GET", // یا POST
-                dataType: "html", // نوع داده مورد انتظار (می‌تواند json، html و غیره باشد)
-                success: function(response){
-                    $("#content").html(response); // به‌روزرسانی محتوای صفحه بدون رفرش
-                },
-                error: function(xhr, status, error){
-                    console.error("خطا در بارگذاری محتوا: " + error);
-                }
-            });
-        });
-    });
-</script> -->
-
-
-
-
-
-
-
-<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
-<script type="text/javascript">
-  $(document).ready(function(){
-
-      $(".carousel-fullscreen.carousel-slider").carousel({
-        fullWidth: true,
-        indicators: true,
-      }).css("height", $(window).height());
-      setTimeout(autoplay, 5000);
-      function autoplay() {
-          $(".carousel-fullscreen.carousel-slider").carousel("next");
-	      setTimeout(autoplay, 5000);
-      }
-
-  });   </script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
-
-<!-- CORE TEMPLATE JS - START -->
-<script src="modules/app/init.js"></script>
-<script src="modules/app/settings.js"></script>
-
-<script src="modules/app/scripts.js"></script>
-
-<!-- END CORE TEMPLATE JS - END -->
-
-
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-  $('.preloader-background').delay(10).fadeOut('slow');
-});
-</script>
 </body>
-
 </html>
-
-
-
