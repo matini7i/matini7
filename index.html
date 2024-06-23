@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>ویدیو آموزشی</h1>
+        <h1 class="bb">ویدئو  آموزشی</h1>
         
         <div class="section">
             <h2>فصل 1</h2>
@@ -88,13 +88,26 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    background: url(BG1004148www.tiktarh.com_.jpg);
+
+    
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+   
 }
+
+.bb{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+animation: changeColor 3s linear infinite;
+}
+
+
+
 
 h1 {
     text-align: center;
@@ -119,6 +132,19 @@ h1 {
     gap: 20px;
 }
 
+
+@keyframes changeColor {
+  0% { color: red; }
+  33% { color: rgb(4, 222, 255); }
+  66% { color: rgb(104, 3, 227); }
+  100% { color: rgb(255, 157, 0); }
+}
+
+
+
+
+
+
 .video-card {
     background: #fff;
     border-radius: 10px;
@@ -127,15 +153,23 @@ h1 {
     flex: 1 1 calc(33.333% - 20px);
     display: flex;
     flex-direction: column;
+
+
+
+    box-shadow: 2px 2px 5px red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .video-card video {
     width: 100%;
     height: auto;
+    box-shadow: 2px 2px 5px #03c7f4;
 }
 
 .video-info {
     padding: 15px;
+    background: url(https://cdn.nody.ir/files/2021/12/06/nody-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%B2%D9%85%DB%8C%D9%86%D9%87-%D8%A7%DA%A9%D9%84%DB%8C%D9%84%DB%8C-%D9%86%D9%82%D8%B1%D9%87-%D8%A7%DB%8C-1638768931.jpg);
+   
 }
 
 .video-info h3 {
