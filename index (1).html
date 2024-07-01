@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="page">
+    <div class="card">
+      <div class="btn1"></div>
+      <div class="btn2"></div>
+      <div class="btn3"></div>
+      <div class="btn4"></div>
+      <div class="card-int">
+        <div class="hello">
+          <button type="submit" id="loginButton">وارد شوید</button>
+          <span class="hidden">خش آمدید</span>
+        </div>
+      </div>
+      <div class="top">
+        <div class="camera">
+          <div class="int"></div>
+        </div>
+        <div class="speaker"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- صفحه جایگزین که می‌خواهید بدون رفرش نمایش داده شود -->
+  <div id="home-page" style="display: none;">
+    <!-- محتویات صفحه جدید -->
+  
+
+
+
+
+  </div>
+
+  <script>
+    // انتخاب دکمه ورود
+    const loginButton = document.getElementById('loginButton');
+
+    // اضافه کردن رویداد کلیک به دکمه ورود
+    loginButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        // مخفی کردن محتوای فعلی
+        document.getElementById('page').style.display = 'none';
+        // نمایش محتوای جدید
+        document.getElementById('home-page').style.display = 'block';
+    });
+  </script>  
+
+  <style>
+    body {
+      background: url(https://tiktarh.com/wp-content/uploads/2022/02/Shsprt1001116www.tiktarh.com_.jpg);
+    }
+    .card {
+      width: 251px;
+      height: 510px;
+      background: black;
+      border-radius: 35px;
+      border: 2px solid rgb(40, 40, 40);
+      padding: 7px;
+      position: relative;
+      box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.486);
+      margin-left: 16%;
+      margin-top: 9%;
+    }
+    .card-int {
+      background-image: linear-gradient(to right bottom, #ff0000, #ff0045, #ff0078, #ea00aa, #b81cd7, #8a3ad6, #5746cf, #004ac2, #003d94, #002e66, #001d3a, #020812);
+      background-size: 200% 200%;
+      background-position: 0% 0%;
+      height: 100%;
+      border-radius: 25px;
+      transition: all 0.6s ease-out;
+      overflow: hidden;
+    }
+    .card:hover .card-int {
+      background-position: 100% 100%;
+    }
+    .top {
+      position: absolute;
+      top: 0px;
+      right: 50%;
+      transform: translate(50%, 0%);
+      width: 35%;
+      height: 18px;
+      background-color: black;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    .speaker {
+      position: absolute;
+      top: 2px;
+      right: 50%;
+      transform: translate(50%, 0%);
+      width: 40%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: rgb(20, 20, 20);
+    }
+    .camera {
+      position: absolute;
+      top: 6px;
+      right: 84%;
+      transform: translate(50%, 0%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.048);
+    }
+    .int {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      background-color: rgba(0, 0, 255, 0.212);
+    }
+    .btn1, .btn2, .btn3, .btn4 {
+      position: absolute;
+      width: 2px;
+    }
+    .btn1, .btn2, .btn3 {
+      height: 45px;
+      top: 30%;
+      right: -4px;
+      background-image: linear-gradient(to right, #111111, #222222, #333333, #464646, #595959);
+    }
+    .btn2, .btn3 {
+      transform: scale(-1);
+      left: -4px;
+    }
+    .btn2, .btn3 {
+      transform: scale(-1);
+      height: 30px;
+    }
+    .btn2 {
+      top: 26%
+    }
+    .btn3 {
+      top: 36%
+    }
+    .hello {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      color: rgb(217, 176, 255) ;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      line-height: 35px;
+      height: 100%;
+      transition: 0.5s ease-in-out;
+    }
+    .hidden {
+      display: block;
+      opacity: 0;
+      transition: all 0.3s ease-in;
+    }
+    .card:hover .hidden {
+      opacity: 1;
+    }
+    .card:hover .hello {
+      transform: translateY(-20px);
+    }
+    button {
+      --glow-color: rgb(217, 176, 255);
+      --glow-spread-color: rgba(191, 123, 255, 0.781);
+      --enhanced-glow-color: rgb(231, 206, 255);
+      --btn-color: rgb(100, 61, 136);
+      border: .25em solid var(--glow-color);
+      padding: 1em 3em;
+      color: var(--glow-color);
+      font-size: 15px;
+      font-weight: bold;
+      background-color: var(--btn-color);
+      border-radius: 1em;
+      outline: none;
+      box-shadow: 0 0 1em .25em var(--glow-color),
+                  0 0 4em 1em var(--glow-spread-color),
+                  inset 0 0 .75em .25em var(--glow-color);
+      text-shadow: 0 0 .5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    button::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: .7;
+      transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+    }
+    button:hover {
+      color: var(--btn-color);
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em .25em var(--glow-color),
+                  0 0 4em 2em var(--glow-spread-color),
+                  inset 0 0 .75em .25em var(--glow-color);
+    }
+    button:active {
+      box-shadow: 0 0 0.6em .25em var(--glow-color),
+                  0 0 2.5em 2em var(--glow-spread-color),
+                  inset 0 0 .5em .25em var(--glow-color);
+    }
+  </style>
+</body>
+</html>
