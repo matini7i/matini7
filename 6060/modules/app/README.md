@@ -1,2 +1,0 @@
-# app
-app level scripts
